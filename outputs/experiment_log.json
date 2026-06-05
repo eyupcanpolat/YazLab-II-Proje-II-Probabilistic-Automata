@@ -1,0 +1,726 @@
+[
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 42,
+    "fold": 0,
+    "f1": 0.720503144654088,
+    "timestamp": "2026-06-06 00:29:52"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 42,
+    "fold": 0,
+    "f1": 0.7358168979790601,
+    "timestamp": "2026-06-06 00:30:09"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 42,
+    "fold": 0,
+    "f1": 0.13634806440561836,
+    "timestamp": "2026-06-06 00:30:11"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 42,
+    "fold": 1,
+    "f1": 0.8739946380697051,
+    "timestamp": "2026-06-06 00:30:26"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 42,
+    "fold": 1,
+    "f1": 0.8513808139534884,
+    "timestamp": "2026-06-06 00:30:37"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 42,
+    "fold": 1,
+    "f1": 0.1766630316248637,
+    "timestamp": "2026-06-06 00:30:40"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 42,
+    "fold": 2,
+    "f1": 0.818070818070818,
+    "timestamp": "2026-06-06 00:30:56"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 42,
+    "fold": 2,
+    "f1": 0.8353055286129971,
+    "timestamp": "2026-06-06 00:31:13"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 42,
+    "fold": 2,
+    "f1": 0.11583487369069624,
+    "timestamp": "2026-06-06 00:31:15"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 123,
+    "fold": 0,
+    "f1": 0.7180467091295116,
+    "timestamp": "2026-06-06 00:31:26"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 123,
+    "fold": 0,
+    "f1": 0.7527223230490018,
+    "timestamp": "2026-06-06 00:31:41"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 123,
+    "fold": 0,
+    "f1": 0.13634806440561836,
+    "timestamp": "2026-06-06 00:31:43"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 123,
+    "fold": 1,
+    "f1": 0.7884521285271571,
+    "timestamp": "2026-06-06 00:31:56"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 123,
+    "fold": 1,
+    "f1": 0.8342916884474647,
+    "timestamp": "2026-06-06 00:32:14"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 123,
+    "fold": 1,
+    "f1": 0.1766630316248637,
+    "timestamp": "2026-06-06 00:32:17"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 123,
+    "fold": 2,
+    "f1": 0.8312625250501002,
+    "timestamp": "2026-06-06 00:32:38"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 123,
+    "fold": 2,
+    "f1": 0.8323790720631786,
+    "timestamp": "2026-06-06 00:32:56"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 123,
+    "fold": 2,
+    "f1": 0.11583487369069624,
+    "timestamp": "2026-06-06 00:32:59"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 2026,
+    "fold": 0,
+    "f1": 0.7042606516290727,
+    "timestamp": "2026-06-06 00:33:10"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 2026,
+    "fold": 0,
+    "f1": 0.703816436431749,
+    "timestamp": "2026-06-06 00:33:20"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 2026,
+    "fold": 0,
+    "f1": 0.13634806440561836,
+    "timestamp": "2026-06-06 00:33:22"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 2026,
+    "fold": 1,
+    "f1": 0.8516591928251122,
+    "timestamp": "2026-06-06 00:33:42"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 2026,
+    "fold": 1,
+    "f1": 0.8305322128851541,
+    "timestamp": "2026-06-06 00:33:53"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 2026,
+    "fold": 1,
+    "f1": 0.1766630316248637,
+    "timestamp": "2026-06-06 00:33:55"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 2026,
+    "fold": 2,
+    "f1": 0.8274159863299791,
+    "timestamp": "2026-06-06 00:34:06"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 2026,
+    "fold": 2,
+    "f1": 0.7501532801961986,
+    "timestamp": "2026-06-06 00:34:19"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 2026,
+    "fold": 2,
+    "f1": 0.11583487369069624,
+    "timestamp": "2026-06-06 00:34:21"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 7,
+    "fold": 0,
+    "f1": 0.7261243052046488,
+    "timestamp": "2026-06-06 00:34:33"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 7,
+    "fold": 0,
+    "f1": 0.73461250934463,
+    "timestamp": "2026-06-06 00:34:51"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 7,
+    "fold": 0,
+    "f1": 0.13634806440561836,
+    "timestamp": "2026-06-06 00:34:53"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 7,
+    "fold": 1,
+    "f1": 0.88125,
+    "timestamp": "2026-06-06 00:35:22"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 7,
+    "fold": 1,
+    "f1": 0.8934829690884032,
+    "timestamp": "2026-06-06 00:35:54"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 7,
+    "fold": 1,
+    "f1": 0.1766630316248637,
+    "timestamp": "2026-06-06 00:35:56"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 7,
+    "fold": 2,
+    "f1": 0.815365551425031,
+    "timestamp": "2026-06-06 00:36:22"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 7,
+    "fold": 2,
+    "f1": 0.8409257898603968,
+    "timestamp": "2026-06-06 00:36:46"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 7,
+    "fold": 2,
+    "f1": 0.11583487369069624,
+    "timestamp": "2026-06-06 00:36:48"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 999,
+    "fold": 0,
+    "f1": 0.7091399166870865,
+    "timestamp": "2026-06-06 00:37:00"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 999,
+    "fold": 0,
+    "f1": 0.7286860581745236,
+    "timestamp": "2026-06-06 00:37:15"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 999,
+    "fold": 0,
+    "f1": 0.13634806440561836,
+    "timestamp": "2026-06-06 00:37:17"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 999,
+    "fold": 1,
+    "f1": 0.8694158075601375,
+    "timestamp": "2026-06-06 00:37:34"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 999,
+    "fold": 1,
+    "f1": 0.8772924938551712,
+    "timestamp": "2026-06-06 00:38:18"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 999,
+    "fold": 1,
+    "f1": 0.1766630316248637,
+    "timestamp": "2026-06-06 00:38:20"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "LSTM",
+    "seed": 999,
+    "fold": 2,
+    "f1": 0.8275725069527214,
+    "timestamp": "2026-06-06 00:38:41"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "GRU",
+    "seed": 999,
+    "fold": 2,
+    "f1": 0.8074179743223966,
+    "timestamp": "2026-06-06 00:39:02"
+  },
+  {
+    "experiment": "SKAB_kfold",
+    "model": "Automata",
+    "seed": 999,
+    "fold": 2,
+    "f1": 0.11583487369069624,
+    "timestamp": "2026-06-06 00:39:04"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "LSTM",
+    "seed": 42,
+    "accuracy": 0.8281,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 6.505,
+    "t_inf": 0.2017,
+    "timestamp": "2026-06-06 00:39:11"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "GRU",
+    "seed": 42,
+    "accuracy": 0.8281,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 3.961,
+    "t_inf": 0.219,
+    "timestamp": "2026-06-06 00:39:15"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "Automata",
+    "seed": 42,
+    "accuracy": 0.8347,
+    "precision": 0.0746,
+    "recall": 0.0625,
+    "f1": 0.068,
+    "unseen_rate": 0.0012,
+    "timestamp": "2026-06-06 00:39:15"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "LSTM",
+    "seed": 123,
+    "accuracy": 0.8786,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 8.156,
+    "t_inf": 0.2529,
+    "timestamp": "2026-06-06 00:39:24"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "GRU",
+    "seed": 123,
+    "accuracy": 0.8834,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 7.053,
+    "t_inf": 0.2677,
+    "timestamp": "2026-06-06 00:39:31"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "Automata",
+    "seed": 123,
+    "accuracy": 0.8347,
+    "precision": 0.0746,
+    "recall": 0.0625,
+    "f1": 0.068,
+    "unseen_rate": 0.0012,
+    "timestamp": "2026-06-06 00:39:31"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "LSTM",
+    "seed": 2026,
+    "accuracy": 0.768,
+    "precision": 0.0087,
+    "recall": 0.0125,
+    "f1": 0.0103,
+    "t_train": 5.531,
+    "t_inf": 0.2689,
+    "timestamp": "2026-06-06 00:39:37"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "GRU",
+    "seed": 2026,
+    "accuracy": 0.8534,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 10.016,
+    "t_inf": 0.269,
+    "timestamp": "2026-06-06 00:39:48"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "Automata",
+    "seed": 2026,
+    "accuracy": 0.8347,
+    "precision": 0.0746,
+    "recall": 0.0625,
+    "f1": 0.068,
+    "unseen_rate": 0.0012,
+    "timestamp": "2026-06-06 00:39:48"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "LSTM",
+    "seed": 7,
+    "accuracy": 0.8858,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 6.992,
+    "t_inf": 0.2256,
+    "timestamp": "2026-06-06 00:39:55"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "GRU",
+    "seed": 7,
+    "accuracy": 0.8726,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 8.035,
+    "t_inf": 0.2244,
+    "timestamp": "2026-06-06 00:40:03"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "Automata",
+    "seed": 7,
+    "accuracy": 0.8347,
+    "precision": 0.0746,
+    "recall": 0.0625,
+    "f1": 0.068,
+    "unseen_rate": 0.0012,
+    "timestamp": "2026-06-06 00:40:04"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "LSTM",
+    "seed": 999,
+    "accuracy": 0.8293,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 5.467,
+    "t_inf": 0.2352,
+    "timestamp": "2026-06-06 00:40:10"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "GRU",
+    "seed": 999,
+    "accuracy": 0.8786,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "t_train": 5.922,
+    "t_inf": 0.223,
+    "timestamp": "2026-06-06 00:40:16"
+  },
+  {
+    "experiment": "BATADAL",
+    "model": "Automata",
+    "seed": 999,
+    "accuracy": 0.8347,
+    "precision": 0.0746,
+    "recall": 0.0625,
+    "f1": 0.068,
+    "unseen_rate": 0.0012,
+    "timestamp": "2026-06-06 00:40:16"
+  },
+  {
+    "experiment": "noise",
+    "model": "LSTM",
+    "accuracy": 0.7861,
+    "precision": 0.01,
+    "recall": 0.0125,
+    "f1": 0.0111,
+    "timestamp": "2026-06-06 00:40:21"
+  },
+  {
+    "experiment": "noise",
+    "model": "GRU",
+    "accuracy": 0.7981,
+    "precision": 0.0111,
+    "recall": 0.0125,
+    "f1": 0.0118,
+    "timestamp": "2026-06-06 00:40:26"
+  },
+  {
+    "experiment": "noise",
+    "model": "Automata",
+    "accuracy": 0.8347,
+    "precision": 0.0476,
+    "recall": 0.0375,
+    "f1": 0.042,
+    "timestamp": "2026-06-06 00:40:27"
+  },
+  {
+    "experiment": "unseen",
+    "model": "Automata",
+    "unseen_count": 1,
+    "unseen_rate": 0.0012,
+    "accuracy": 0.7805,
+    "precision": 0.0952,
+    "recall": 0.15,
+    "f1": 0.1165,
+    "timestamp": "2026-06-06 00:40:27"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 3,
+    "al": 3,
+    "n_states": 12,
+    "density": 1.0,
+    "f1": 0.094,
+    "timestamp": "2026-06-06 00:40:29"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 3,
+    "al": 4,
+    "n_states": 18,
+    "density": 0.966,
+    "f1": 0.0846,
+    "timestamp": "2026-06-06 00:40:31"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 3,
+    "al": 5,
+    "n_states": 24,
+    "density": 1.0,
+    "f1": 0.1193,
+    "timestamp": "2026-06-06 00:40:33"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 3,
+    "al": 6,
+    "n_states": 30,
+    "density": 0.76,
+    "f1": 0.112,
+    "timestamp": "2026-06-06 00:40:36"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 4,
+    "al": 3,
+    "n_states": 50,
+    "density": 0.808,
+    "f1": 0.1363,
+    "timestamp": "2026-06-06 00:40:38"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 4,
+    "al": 4,
+    "n_states": 110,
+    "density": 0.4786,
+    "f1": 0.2015,
+    "timestamp": "2026-06-06 00:40:40"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 4,
+    "al": 5,
+    "n_states": 194,
+    "density": 0.2403,
+    "f1": 0.3835,
+    "timestamp": "2026-06-06 00:40:43"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 4,
+    "al": 6,
+    "n_states": 298,
+    "density": 0.1255,
+    "f1": 0.4389,
+    "timestamp": "2026-06-06 00:40:45"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 5,
+    "al": 3,
+    "n_states": 174,
+    "density": 0.2666,
+    "f1": 0.3631,
+    "timestamp": "2026-06-06 00:40:48"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 5,
+    "al": 4,
+    "n_states": 516,
+    "density": 0.051,
+    "f1": 0.4887,
+    "timestamp": "2026-06-06 00:40:51"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 5,
+    "al": 5,
+    "n_states": 1111,
+    "density": 0.0121,
+    "f1": 0.512,
+    "timestamp": "2026-06-06 00:40:54"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 5,
+    "al": 6,
+    "n_states": 1897,
+    "density": 0.0043,
+    "f1": 0.518,
+    "timestamp": "2026-06-06 00:40:58"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 6,
+    "al": 3,
+    "n_states": 554,
+    "density": 0.0429,
+    "f1": 0.4792,
+    "timestamp": "2026-06-06 00:41:01"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 6,
+    "al": 4,
+    "n_states": 2143,
+    "density": 0.0033,
+    "f1": 0.5178,
+    "timestamp": "2026-06-06 00:41:06"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 6,
+    "al": 5,
+    "n_states": 4962,
+    "density": 0.0006,
+    "f1": 0.5223,
+    "timestamp": "2026-06-06 00:41:38"
+  },
+  {
+    "experiment": "sensitivity",
+    "ws": 6,
+    "al": 6,
+    "n_states": 8229,
+    "density": 0.0002,
+    "f1": 0.5226,
+    "timestamp": "2026-06-06 00:43:53"
+  },
+  {
+    "experiment": "wilcoxon",
+    "pair": "LSTM_vs_GRU",
+    "p_value": 1.0,
+    "significant": false,
+    "timestamp": "2026-06-06 00:43:54"
+  }
+]

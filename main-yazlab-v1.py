@@ -1437,7 +1437,7 @@ if __name__ == "__main__":
     y_b_all = pd.concat([y_b_tr, y_b_val, y_b_te])
     print(f"  SKAB klasörleri        : {sorted(skab_loader.data['source_group'].unique())}")
     print(f"  SKAB dosya sayıları    : {files_per_group} "
-          f"(toplam {skab_loader.data['source_file'].nunique()} CSV)")
+          f"(toplam {sum(files_per_group.values())} CSV)")
     print(f"  BATADAL satır sayısı   : {len(y_b_all)}")
     print(f"  BATADAL label sütunu   : {bat_loader.target_col}")
     print(f"  BATADAL label dağılımı : normal={int((y_b_all == 0).sum())}, "

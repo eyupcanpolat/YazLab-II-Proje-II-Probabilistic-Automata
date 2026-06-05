@@ -1,0 +1,14 @@
+[
+  {
+    "time_step": 750,
+    "state": "acca",
+    "pattern": "acaa",
+    "status": "unseen",
+    "mapped_to": "acca",
+    "transition_prob": 0.005848,
+    "anomaly_score": 5.141664,
+    "path_probability": 0.0,
+    "confidence": 0.005848,
+    "decision": "anomaly"
+  }
+]
