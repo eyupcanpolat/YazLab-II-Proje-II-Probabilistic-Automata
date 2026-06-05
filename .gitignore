@@ -1,0 +1,12 @@
+﻿.venv/
+.claude/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+SKAB_Dataset/
+BATADAL_dataset04.csv
+data/raw/
+external/
+
+.DS_Store
