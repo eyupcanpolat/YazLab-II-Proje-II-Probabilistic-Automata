@@ -44,6 +44,9 @@ config_data = {
         # PDF §VII-B / §IX-A: zorunlu seed listesi
         "random_seeds": [42, 123, 2026, 7, 999],
         "scenarios": ["original", "gaussian_noise", "unseen_data"],
+        # Final koşuda aktif derin öğrenme modelleri. 1D-CNN kapatıldı → yalnız LSTM + GRU.
+        # (Automata her deneyde ayrıca koşar; bu liste sadece DL modellerini kapsar.)
+        "dl_models": ["LSTM", "GRU"],
         # Cross-dataset tablosu (EK Tablo 3) leakage riski taşıdığı ve zorunlu
         # olmadığı için varsayılan olarak KAPALI. İstenirse True yapılabilir.
         "run_cross_dataset": False
@@ -63,7 +66,7 @@ config_data = {
         }
     },
     "data_split": {
-        "skab":    {"strategy": "GroupKFold", "n_splits": 5},
+        "skab":    {"strategy": "GroupKFold", "n_splits": 3},
         "batadal": {"train": 0.60, "val": 0.20, "test": 0.20}
     },
     "noise": {"gaussian_level": 0.2},
@@ -808,14 +811,16 @@ def plot_parameter_sensitivity(sensitivity_df: pd.DataFrame, save=True):
 # 10. DENEY ORKESTRASYONU
 # ============================================================
 def run_skab_kfold_experiment(X_skab, y_skab, skab_splits, groups, logger, cfg):
-    """SKAB 5-Fold × N-Seed deneyi. source_file bazlı GroupKFold [PDF §VII-B]."""
+    """SKAB GroupKFold × N-Seed deneyi. source_file bazlı GroupKFold [PDF §VII-B]."""
+    n_splits = cfg.get("data_split")["skab"]["n_splits"]
     print("\n" + "="*60)
-    print("  [1] SKAB 5-FOLD × SEED CROSS VALIDATION")
+    print(f"  [1] SKAB {n_splits}-FOLD × SEED CROSS VALIDATION")
     print("="*60)
 
-    seeds  = cfg.get("experiment")["random_seeds"]
-    ws     = cfg.get("automata_params")["default"]["window_size"]
-    models = ["LSTM", "GRU", "1D-CNN", "Automata"]
+    seeds     = cfg.get("experiment")["random_seeds"]
+    ws        = cfg.get("automata_params")["default"]["window_size"]
+    dl_models = cfg.get("experiment")["dl_models"]
+    models    = dl_models + ["Automata"]
     groups_arr = np.asarray(groups)
 
     results = {m: {s: [] for s in seeds} for m in models}
@@ -848,7 +853,7 @@ def run_skab_kfold_experiment(X_skab, y_skab, skab_splits, groups, logger, cfg):
                 print(f"  [UYARI] Fold {fold_idx}: yetersiz sequence — atlandı.")
                 continue
 
-            for m in ["LSTM", "GRU", "1D-CNN"]:
+            for m in dl_models:
                 model = DeepLearningModels(
                     input_shape=(ws, X_seq_tr.shape[2]), model_type=m
                 )
@@ -911,9 +916,10 @@ def run_batadal_experiment(X_b_tr, y_b_tr, X_b_val, y_b_val, X_b_te, y_b_te,
     print("  [2] BATADAL SEED DENEYİ")
     print("="*60)
 
-    seeds  = cfg.get("experiment")["random_seeds"]
-    ws     = cfg.get("automata_params")["default"]["window_size"]
-    models = ["LSTM", "GRU", "1D-CNN", "Automata"]
+    seeds     = cfg.get("experiment")["random_seeds"]
+    ws        = cfg.get("automata_params")["default"]["window_size"]
+    dl_models = cfg.get("experiment")["dl_models"]
+    models    = dl_models + ["Automata"]
 
     scaler = MinMaxScaler()
     X_tr_s  = scaler.fit_transform(X_b_tr)
@@ -945,7 +951,7 @@ def run_batadal_experiment(X_b_tr, y_b_tr, X_b_val, y_b_val, X_b_te, y_b_te,
         tf.random.set_seed(seed)
         np.random.seed(seed)
 
-        for m in ["LSTM", "GRU", "1D-CNN"]:
+        for m in dl_models:
             model = DeepLearningModels(
                 input_shape=(ws, X_seq_tr.shape[2]), model_type=m
             )
@@ -1022,7 +1028,8 @@ def run_noise_experiment(X_b_tr, y_b_tr, X_b_val, y_b_val, X_b_te, y_b_te,
     print("  [3] GÜRÜLTÜ SENARYOSU (Gaussian Noise)")
     print("="*60)
 
-    ws = cfg.get("automata_params")["default"]["window_size"]
+    ws        = cfg.get("automata_params")["default"]["window_size"]
+    dl_models = cfg.get("experiment")["dl_models"]
     tf.random.set_seed(42); np.random.seed(42)
 
     scaler = MinMaxScaler()
@@ -1040,7 +1047,7 @@ def run_noise_experiment(X_b_tr, y_b_tr, X_b_val, y_b_val, X_b_te, y_b_te,
     X_seq_te_noisy = add_gaussian_noise(X_seq_te)
 
     noise_results = {}
-    for m in ["LSTM", "GRU", "1D-CNN"]:
+    for m in dl_models:
         model = DeepLearningModels(input_shape=(ws, X_seq_tr.shape[2]), model_type=m)
         model.train(X_seq_tr, y_seq_tr, X_seq_val, y_seq_val)
         preds = model.predict(X_seq_te_noisy)
@@ -1130,7 +1137,8 @@ def run_cross_dataset(X_skab, y_skab, skab_splits,
     print("  [5] CROSS-DATASET GENELLENEBİLİRLİK")
     print("="*60)
 
-    ws = cfg.get("automata_params")["default"]["window_size"]
+    ws        = cfg.get("automata_params")["default"]["window_size"]
+    dl_models = cfg.get("experiment")["dl_models"]
     tr_idx, te_idx = skab_splits[0]
 
     scaler_s = MinMaxScaler()
@@ -1149,7 +1157,7 @@ def run_cross_dataset(X_skab, y_skab, skab_splits,
     y_te_arr = y_b_te.values.astype(int)
 
     cross_results = {}
-    for m in ["LSTM", "GRU", "1D-CNN"]:
+    for m in dl_models:
         X_c_tr, y_c_tr = create_sequences(X_tr_pca, y_tr_arr, ws)
         X_c_te, y_c_te = create_sequences(X_te_pca, y_te_arr, ws)
 
@@ -1251,7 +1259,7 @@ def run_statistical_tests(bat_results, logger):
     print("  [7] İSTATİSTİKSEL ANLAMLILIK TESTLERİ (Wilcoxon)")
     print("="*60)
 
-    models = ["LSTM", "GRU", "1D-CNN"]
+    models = config_data["experiment"]["dl_models"]
     pairs  = [(models[i], models[j]) for i in range(len(models)) for j in range(i+1, len(models))]
 
     for m1, m2 in pairs:
@@ -1289,7 +1297,7 @@ def print_final_report(skab_summary, bat_results, noise_results,
     print("  NİHAİ RAPOR")
     print("="*60)
 
-    models = ["LSTM", "GRU", "1D-CNN", "Automata"]
+    models = config_data["experiment"]["dl_models"] + ["Automata"]
 
     print("\n[TABLO 1] Model Performansı (Ortalama F1 ± Std)\n")
     print(f"{'Model':<12} | {'SKAB F1':<18} | {'BATADAL F1':<18}")
@@ -1350,7 +1358,9 @@ if __name__ == "__main__":
 
     skab_loader = SKABDataLoader()
     skab_loader.load_data()
-    X_skab, y_skab, skab_splits, skab_groups = skab_loader.get_kfold_splits()
+    X_skab, y_skab, skab_splits, skab_groups = skab_loader.get_kfold_splits(
+        n_splits=cfg.get("data_split")["skab"]["n_splits"]
+    )
     print(f"  SKAB: {X_skab.shape}, anomali oranı: {y_skab.mean():.3f}")
 
     bat_loader = BATADALDataLoader()
@@ -1360,22 +1370,26 @@ if __name__ == "__main__":
     skab_summary = run_skab_kfold_experiment(
         X_skab, y_skab, skab_splits, skab_groups, logger, cfg
     )
+    logger.save()   # ana deney sonrası ara kayıt (checkpoint)
 
     bat_results, final_pred, final_prob, auto_for_plot, X_te_pca, _ = \
         run_batadal_experiment(
             X_b_tr, y_b_tr, X_b_val, y_b_val, X_b_te, y_b_te, logger, cfg
         )
+    logger.save()   # ana deney sonrası ara kayıt (checkpoint)
 
     # FIX: run_noise_experiment artık X_seq_tr/val parametresi almıyor
     noise_results = run_noise_experiment(
         X_b_tr, y_b_tr, X_b_val, y_b_val, X_b_te, y_b_te,
         X_te_pca, logger, cfg
     )
+    logger.save()   # ana deney sonrası ara kayıt (checkpoint)
 
     unseen_mets, unseen_cnt, unseen_rate = run_unseen_experiment(
         X_b_tr, y_b_tr, X_b_te, y_b_te, logger, cfg
     )
     print(f"  Unseen oran: {unseen_rate*100:.1f}%  F1={unseen_mets['f1']:.4f}")
+    logger.save()   # ana deney sonrası ara kayıt (checkpoint)
 
     # Cross-dataset (EK Tablo 3): leakage riski + zorunlu değil → varsayılan KAPALI
     if config_data["experiment"].get("run_cross_dataset", False):
@@ -1383,6 +1397,7 @@ if __name__ == "__main__":
             X_skab, y_skab, skab_splits,
             X_b_te, y_b_te, logger, cfg
         )
+        logger.save()   # ana deney sonrası ara kayıt (checkpoint)
     else:
         print("\n[BİLGİ] Cross-dataset deneyi devre dışı (RUN_CROSS_DATASET=False, "
               "leakage riski). Açmak için config_data['experiment']['run_cross_dataset']=True")
@@ -1391,8 +1406,10 @@ if __name__ == "__main__":
     sensitivity_df = run_parameter_sensitivity(
         X_skab, y_skab, skab_splits, skab_groups, logger, cfg
     )
+    logger.save()   # ana deney sonrası ara kayıt (checkpoint)
 
     run_statistical_tests(bat_results, logger)
+    logger.save()   # ana deney sonrası ara kayıt (checkpoint)
 
     print("\n" + "="*60)
     print("  GÖRSELLEŞTİRMELER ÜRETİLİYOR")
