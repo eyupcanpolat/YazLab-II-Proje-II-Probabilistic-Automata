@@ -198,6 +198,11 @@ Açıklamalar deterministik ve yeniden üretilebilirdir.
 | GRU | 0.0000 | 0.0118 | — | — |
 | Automata | 0.0680 | 0.0420 | 0.1165 | %0.12 (829 pattern'da 1 unseen) |
 
+> **Not:** Bu tablodaki "Orijinal F1" sütunu, gürültü deneyiyle birebir karşılaştırılabilir
+> olması için **seed=42 baseline** değeridir (LSTM/GRU seed=42'de F1=0.0000). Tablo 1'deki
+> BATADAL F1 ise 5 seed ortalamasıdır (LSTM 0.0021 ± 0.0041); aradaki fark bu agregasyon
+> farkından kaynaklanır.
+
 **Tablo 3 — Parametre Duyarlılık (F1, SKAB Fold-0)**
 
 | Parametre (diğeri sabit) | Değer=3 | Değer=4 | Değer=5 | Değer=6 |
