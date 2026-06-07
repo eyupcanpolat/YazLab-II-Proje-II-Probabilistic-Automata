@@ -4,6 +4,9 @@ YazLab II – Proje II kapsamında geliştirilmiş, zaman serisi anomali tespiti
 **black-box derin öğrenme** modelleri ile **yorumlanabilir olasılıksal otomata**
 yaklaşımını karşılaştıran bir çalışmadır.
 
+> 📄 **Teslim raporu:** Detaylı deney sonuçları ve karşılaştırmalı analiz tabloları
+> Word formatındaki `rapor.docx` dosyasındadır.
+
 ---
 
 ## 2. Proje Amacı
