@@ -4,7 +4,7 @@
     "state": "acca",
     "pattern": "acaa",
     "status": "unseen",
-    "mapped_to": "acca",
+    "mapped_to": "acac",
     "transition_prob": 0.005848,
     "anomaly_score": 5.141664,
     "path_probability": 0.0,
